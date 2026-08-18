@@ -158,9 +158,10 @@ export function TravelProvider({ children }) {
       body: JSON.stringify({ cityId: cityId || null, countryId: countryId || null, title, description, dateFrom, dateTo }),
     });
     await refreshTrips();
+    await refreshCities();
     await refreshCountries();
     return normalize(data);
-  }, [apiFetch, refreshTrips, refreshCountries]);
+  }, [apiFetch, refreshTrips, refreshCities, refreshCountries]);
 
   const updateTrip = useCallback(async (tripId, updates) => {
     await apiFetch(`/trips/${tripId}`, {
