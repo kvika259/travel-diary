@@ -119,7 +119,12 @@ npm run dev
 npm run build
 ```
 
-> Бэкенд должен быть запущен на `http://localhost:3000` — см. `server/README.md`
+## Деплой
+
+- **Фронтенд**: https://pro-travel-diary.netlify.app/
+- **Бэкенд**: https://travel-server-k5xo.onrender.com/
+
+> Бэкенд должен быть запущен на `http://localhost:3000` (локально) или доступен по URL из `.env` — см. `server/README.md`
 
 ## Структура проекта
 

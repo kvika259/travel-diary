@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useCallback, useEffect, useMemo } from 'react';
-import { useAuth } from './AuthContext';
+import { useAuth, API_BASE } from './AuthContext';
 
 const TravelContext = createContext(null);
 
@@ -180,7 +180,7 @@ export function TravelProvider({ children }) {
     const formData = new FormData();
     formData.append('photo', file);
     const token = localStorage.getItem('travel-diary-token');
-    const res = await fetch(`http://localhost:3000/api/trips/${tripId}/photos`, {
+    const res = await fetch(`${API_BASE}/trips/${tripId}/photos`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
@@ -200,7 +200,7 @@ export function TravelProvider({ children }) {
 
   const getPhotoUrl = useCallback((tripId, photoId) => {
     const token = localStorage.getItem('travel-diary-token');
-    return `http://localhost:3000/api/trips/${tripId}/photos/${photoId}?token=${token}`;
+    return `${API_BASE}/trips/${tripId}/photos/${photoId}?token=${token}`;
   }, []);
 
   const fetchCountry = useCallback(async (countryId) => {
