@@ -37,12 +37,29 @@ function VisitedCitiesList({ cities, countryId }) {
 export default function CountryView() {
   const { countryId } = useParams();
   const navigate = useNavigate();
-  const { countries, toggleCountryVisited, fetchCountry } = useTravel();
+  const { countries, toggleCountryVisited, toggleCityVisited, fetchCountry } = useTravel();
   const [tab, setTab] = useState('cities');
   const [showAdd, setShowAdd] = useState(false);
   const [countryDetail, setCountryDetail] = useState(null);
   const [loading, setLoading] = useState(true);
   const [refreshKey, setRefreshKey] = useState(0);
+
+  const handleToggleCity = async (cityId) => {
+    try {
+      const result = await toggleCityVisited(cityId);
+      setCountryDetail((prev) => {
+        if (!prev) return prev;
+        return {
+          ...prev,
+          cities: (prev.cities || []).map((c) =>
+            c.id === cityId ? { ...c, visited: result.visited } : c
+          ),
+        };
+      });
+    } catch (err) {
+      console.error('Ошибка при изменении города:', err);
+    }
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -128,7 +145,15 @@ export default function CountryView() {
                 className={styles.card}
               >
                 <div className={styles.cardLeft}>
-                  <span className={styles.check}>{city.visited ? '✔️' : '☐'}</span>
+                  <span
+                    className={styles.check}
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleToggleCity(city.id); }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); handleToggleCity(city.id); } }}
+                  >
+                    {city.visited ? '✔️' : '☐'}
+                  </span>
                   <div>
                     <div className={styles.cityName}>{city.name}</div>
                     <div className={styles.cityMeta}>
