@@ -3,11 +3,50 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import styles from './AuthPages.module.css';
 
+// SVG иконки
+const MailIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="M22 6L12 13L2 6" />
+  </svg>
+);
+
+const LockIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <rect x="3" y="11" width="18" height="11" rx="2" />
+    <path d="M7 11V7a5 5 0 0110 0v4" />
+  </svg>
+);
+
+const EyeIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+);
+
+const EyeOffIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24" />
+    <line x1="1" y1="1" x2="23" y2="23" />
+  </svg>
+);
+
+const LogoIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+    <path d="M20 5C12 5 8 12 8 20C8 28 12 35 20 35C28 35 32 28 32 20C32 12 28 5 20 5Z" fill="#FDF8F3" opacity="0.3"/>
+    <path d="M20 10C15 10 13 14 13 20C13 26 15 30 20 30C25 30 27 26 27 20C27 14 25 10 20 10Z" fill="currentColor"/>
+    <circle cx="20" cy="18" r="3" fill="#FDF8F3"/>
+  </svg>
+);
+
 export default function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -26,46 +65,99 @@ export default function LoginPage() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.card}>
-        <h2 className={styles.title}>🔑 Вход</h2>
-
-        {error && <div className={styles.error}>{error}</div>}
-
-        <form onSubmit={handleSubmit}>
-          <div className={styles.field}>
-            <label className={styles.label}>Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={styles.input}
-              placeholder="your@email.com"
-              required
-            />
+    <div className={styles.loginContainer}>
+      {/* Левая колонка — фото */}
+      <div className={styles.leftPanel}>
+        <div className={styles.logo}>
+          <LogoIcon />
+          <span>Travel Journal</span>
+        </div>
+        <div className={styles.overlay}>
+          <div className={styles.heroText}>
+            <h1>Запоминайте каждое путешествие</h1>
+            <p>Ваши города, места и заметки в одном красивом дневнике</p>
           </div>
-
-          <div className={styles.field}>
-            <label className={styles.label}>Пароль</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={styles.input}
-              placeholder="Минимум 6 символов"
-              required
-              minLength={6}
-            />
+          <div className={styles.carouselDots}>
+            <span className={styles.dotActive}></span>
+            <span className={styles.dot}></span>
+            <span className={styles.dot}></span>
           </div>
+        </div>
+      </div>
 
-          <button type="submit" className={styles.submit} disabled={loading}>
-            {loading ? 'Входим...' : 'Войти'}
-          </button>
-        </form>
+      {/* Правая колонка — форма */}
+      <div className={styles.rightPanel}>
+        <div className={styles.formContainer}>
+          <h2 className={styles.welcomeTitle}>С возвращением!</h2>
+          <p className={styles.welcomeSubtitle}>
+            Войдите в свой аккаунт, чтобы продолжить путешествие
+          </p>
 
-        <p className={styles.switch}>
-          Нет аккаунта? <a href="/register" className={styles.link}>Зарегистрируйтесь</a>
-        </p>
+          {error && <div className={styles.error}>{error}</div>}
+
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <div className={styles.inputGroup}>
+              <span className={styles.inputIcon}>
+                <MailIcon />
+              </span>
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={styles.input}
+                placeholder="Email или телефон"
+                required
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <span className={styles.inputIcon}>
+                <LockIcon />
+              </span>
+              <input
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className={styles.input}
+                placeholder="Пароль"
+                required
+                minLength={6}
+              />
+              <button
+                type="button"
+                className={styles.eyeButton}
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+              </button>
+            </div>
+
+            <div className={styles.formOptions}>
+              <label className={styles.checkboxLabel}>
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                />
+                <span>Запомнить меня</span>
+              </label>
+              <a href="#" className={styles.forgotLink}>Забыли пароль?</a>
+            </div>
+
+            <button type="submit" className={styles.submitButton} disabled={loading}>
+              {loading ? 'Входим...' : 'Войти'}
+            </button>
+
+            <div className={styles.divider}>
+              <span>или</span>
+            </div>
+
+            <p className={styles.switch}>
+              Нет аккаунта?{' '}
+              <a href="/register" className={styles.link}>Зарегистрироваться</a>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   );
