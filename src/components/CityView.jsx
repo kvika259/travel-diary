@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTravel } from '../context/TravelContext';
 import AddForm from './AddForm';
+import { formatDate } from '../utils/formatDate';
 import styles from './CityView.module.css';
 
 export default function CityView() {
@@ -137,7 +138,7 @@ export default function CityView() {
               <Link to={`/trip/${trip.id}`} key={trip.id} className={styles.tripCard}>
                 <div className={styles.tripTitle}>📝 {trip.title}</div>
                 <div className={styles.tripMeta}>
-                  {trip.dateFrom} – {trip.dateTo} · 📷 {trip.photos?.length || 0} фото
+                  {formatDate(trip.dateFrom)} – {formatDate(trip.dateTo)} · 📷 {trip.photos?.length || 0} фото
                 </div>
                 {trip.description && (
                   <div className={styles.tripDesc}>

@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTravel } from '../context/TravelContext';
 import MapView from './MapView';
 import AddForm from './AddForm';
+import { formatDate } from '../utils/formatDate';
 import styles from './CountryView.module.css';
 
 function VisitedCitiesList({ cities, countryId }) {
@@ -203,7 +204,7 @@ export default function CountryView() {
                 {trip.cityName && <span className={styles.tripCity}> — {trip.cityName}</span>}
               </div>
               <div className={styles.tripMeta}>
-                {trip.dateFrom} – {trip.dateTo} · 📷 {trip.photos?.length || 0} фото
+                {formatDate(trip.dateFrom)} – {formatDate(trip.dateTo)} · 📷 {trip.photos?.length || 0} фото
               </div>
             </Link>
           ))}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useTravel } from '../context/TravelContext';
+import { formatDate, toDateInputValue } from '../utils/formatDate';
 import styles from './TripView.module.css';
 
 export default function TripView() {
@@ -35,8 +36,8 @@ export default function TripView() {
     setEditData({
       title: trip.title,
       description: trip.description || '',
-      dateFrom: trip.dateFrom || '',
-      dateTo: trip.dateTo || '',
+      dateFrom: toDateInputValue(trip.dateFrom),
+      dateTo: toDateInputValue(trip.dateTo),
     });
     setIsEditing(true);
   };
@@ -156,7 +157,7 @@ export default function TripView() {
 
           {(trip.dateFrom || trip.dateTo) && (
             <div className={styles.dates}>
-              📅 {trip.dateFrom || '...'} – {trip.dateTo || '...'}
+              📅 {formatDate(trip.dateFrom) || '...'} – {formatDate(trip.dateTo) || '...'}
             </div>
           )}
 

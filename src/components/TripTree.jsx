@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTravel } from '../context/TravelContext';
+import { formatDate } from '../utils/formatDate';
 import SearchBar from './SearchBar';
 import styles from './TripTree.module.css';
 
@@ -105,8 +106,8 @@ export default function TripTree() {
                             >
                               <div className={styles.tripTitle}>📝 {trip.title}</div>
                               <div className={styles.tripMeta}>
-                                {trip.dateFrom && `${trip.dateFrom} – `}
-                                {trip.dateTo} · 📷 {trip.photos?.length || 0} фото
+                                {trip.dateFrom && `${formatDate(trip.dateFrom)} – `}
+                                {formatDate(trip.dateTo)} · 📷 {trip.photos?.length || 0} фото
                               </div>
                             </Link>
                           ))}
