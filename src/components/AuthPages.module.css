@@ -21,7 +21,7 @@
 /* Левая панель с фото */
 .leftPanel {
   flex: 0 0 45%;
-  background: url('../assets/login-bg.jpg') center/cover no-repeat;
+  background: url('../Prague.png') center/cover no-repeat;
   background-color: #2C1810;
   position: relative;
   display: flex;
