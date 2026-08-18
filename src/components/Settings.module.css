@@ -1,0 +1,60 @@
+.heading {
+  margin: 0 0 20px;
+  font-size: 1.3rem;
+}
+
+.section {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.section h3 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #5a6fd6;
+}
+
+.dangerBtn {
+  padding: 12px 20px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.about {
+  padding: 16px;
+  color: #999;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.about p {
+  margin: 4px 0;
+}

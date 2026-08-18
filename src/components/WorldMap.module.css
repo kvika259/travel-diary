@@ -1,0 +1,101 @@
+.section {
+  margin-top: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  color: #333;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  color: #999;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.countries {
+  border-top: 1px solid #eee;
+  padding: 4px 0;
+}
+
+.countryBlock {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.countryBlock:last-child {
+  border-bottom: none;
+}
+
+.countryRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.citiesToggle {
+  background: none;
+  border: none;
+  padding: 10px 4px 10px 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.citiesToggle .arrow {
+  color: #999;
+  font-size: 0.65rem;
+  width: 14px;
+}
+
+.countryName {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 10px 16px 10px 4px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.1s;
+}
+
+.countryName:hover {
+  background: #f5f5ff;
+}
+
+.count {
+  font-weight: 400;
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.cityList {
+  padding: 0 16px 8px 28px;
+}
+
+.cityLink {
+  display: block;
+  padding: 6px 0;
+  text-decoration: none;
+  color: #555;
+  font-size: 0.85rem;
+  transition: color 0.1s;
+}
+
+.cityLink:hover {
+  color: #667eea;
+}

@@ -1,0 +1,174 @@
+.notFound {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.back {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 4px;
+  color: #667eea;
+  margin-top: 2px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.visited {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #4caf50;
+  cursor: pointer;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  background: #eee;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.tab, .tabActive {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.2s;
+}
+
+.tabActive {
+  background: white;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.addBtn {
+  padding: 6px 14px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.checkLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.checkLabel input {
+  display: none;
+}
+
+.checkMark {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.attrName {
+  font-size: 0.95rem;
+}
+
+.trips {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tripCard {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 14px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.tripTitle {
+  font-weight: 600;
+}
+
+.tripMeta {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+.tripDesc {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.newTripBtn {
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #999;
+  font-size: 0.9rem;
+}

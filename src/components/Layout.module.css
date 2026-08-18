@@ -1,0 +1,96 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fafafa;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.userBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userName {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.logoutBtn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.main {
+  flex: 1;
+  padding: 16px;
+  padding-bottom: 80px;
+}
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 8px 0;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+  z-index: 100;
+}
+
+.nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #888;
+  font-size: 0.7rem;
+  gap: 2px;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #667eea;
+}
+
+.active {
+  color: #667eea !important;
+  font-weight: 600;
+}

@@ -1,0 +1,108 @@
+.hero {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.hero > div {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.addBtn {
+  padding: 12px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.addBtn:hover {
+  background: #5a6fd6;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 14px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+  gap: 12px;
+}
+
+.card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cardLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+.cardRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.progress {
+  width: 80px;
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #667eea;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.arrow {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  padding: 40px 0;
+  font-size: 0.95rem;
+}
