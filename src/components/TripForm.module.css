@@ -15,7 +15,7 @@
   font-size: 1.3rem;
   cursor: pointer;
   padding: 4px;
-  color: #667eea;
+  color: var(--brown-primary);
 }
 
 .title {
@@ -48,7 +48,7 @@
 }
 
 .input:focus, .textarea:focus {
-  border-color: #667eea;
+  border-color: var(--brown-primary);
 }
 
 .row {
@@ -108,7 +108,7 @@
 }
 
 .addPhoto:hover {
-  border-color: #667eea;
+  border-color: var(--brown-primary);
 }
 
 .addPhotoIcon {
@@ -124,13 +124,18 @@
 .submit {
   width: 100%;
   padding: 14px;
-  background: #667eea;
+  background: var(--brown-primary);
   color: white;
   border: none;
   border-radius: 12px;
   font-size: 1rem;
   cursor: pointer;
   margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.submit:hover {
+  background: var(--brown-dark);
 }
 
 .submit:disabled {

@@ -73,7 +73,7 @@ export default function MapView({ markers, center, zoom = 6 }) {
       marker.bindPopup(`
         <div style="text-align:center;font-size:14px">
           <strong>${m.name}</strong><br/>
-          <a href="${m.link}" style="color:#667eea;text-decoration:none;font-size:12px">Подробнее →</a>
+          <a href="${m.link}" style="color:#A67C52;text-decoration:none;font-size:12px">Подробнее →</a>
         </div>
       `);
 

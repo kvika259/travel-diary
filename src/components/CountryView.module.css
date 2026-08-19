@@ -18,7 +18,7 @@
   font-size: 1.3rem;
   cursor: pointer;
   padding: 4px;
-  color: #667eea;
+  color: var(--brown-primary);
 }
 
 .emoji {
@@ -77,12 +77,17 @@
 
 .addBtn {
   padding: 6px 14px;
-  background: #667eea;
+  background: var(--brown-primary);
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 0.85rem;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+.addBtn:hover {
+  background: var(--brown-dark);
 }
 
 .list {
@@ -161,13 +166,18 @@
 
 .newTripBtn {
   padding: 12px;
-  background: #667eea;
+  background: var(--brown-primary);
   color: white;
   border: none;
   border-radius: 12px;
   font-size: 0.9rem;
   cursor: pointer;
   margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.newTripBtn:hover {
+  background: var(--brown-dark);
 }
 
 .empty {

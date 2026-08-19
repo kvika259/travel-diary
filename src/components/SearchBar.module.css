@@ -17,7 +17,7 @@
 }
 
 .input:focus {
-  border-color: #667eea;
+  border-color: var(--brown-primary);
 }
 
 .clear {

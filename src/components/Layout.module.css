@@ -4,11 +4,11 @@
   flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
-  background: #fafafa;
+  background: var(--bg-cream);
 }
 
 .header {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: var(--brown-primary);
   color: white;
   padding: 12px 20px;
   display: flex;
@@ -48,7 +48,7 @@
 }
 
 .logoutBtn:hover {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.35);
 }
 
 .main {
@@ -65,8 +65,8 @@
   max-width: 800px;
   margin: 0 auto;
   display: flex;
-  background: white;
-  border-top: 1px solid #e0e0e0;
+  background: var(--bg-cream);
+  border-top: 1px solid var(--border-light);
   padding: 8px 0;
   padding-bottom: max(8px, env(safe-area-inset-bottom));
   z-index: 100;
@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #888;
+  color: var(--text-muted);
   font-size: 0.7rem;
   gap: 2px;
   padding: 4px;
@@ -87,10 +87,10 @@
 }
 
 .nav a:hover {
-  color: #667eea;
+  color: var(--brown-primary);
 }
 
 .active {
-  color: #667eea !important;
+  color: var(--brown-primary) !important;
   font-weight: 600;
 }

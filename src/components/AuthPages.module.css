@@ -389,7 +389,7 @@
 .submit {
   width: 100%;
   padding: 12px;
-  background: #667eea;
+  background: var(--brown-primary);
   color: white;
   border: none;
   border-radius: 12px;
@@ -400,7 +400,7 @@
 }
 
 .submit:hover {
-  background: #5a6fd6;
+  background: var(--brown-dark);
 }
 
 .submit:disabled {
